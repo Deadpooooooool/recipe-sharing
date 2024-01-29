@@ -1,0 +1,50 @@
+/* src/styles/MainLayout.css */
+
+.layout {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto multiple lines as needed */
+}
+
+.sidebar {
+  flex: 0 0 250px; /* Don't grow, don't shrink, start at 250px */
+  margin-top: 3%;
+}
+
+.main-content {
+  flex: 1; /* Allow to grow and fill the available space */
+  margin: 0 50px; /* Keep consistent margin */
+  padding-top: 3%;
+}
+
+/* For smaller screens, adjust sidebar and main-content */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full width */
+    order: 2; /* Move sidebar below main content */
+  }
+
+  .main-content {
+    margin: 0 20px; /* Smaller margin on smaller screens */
+    order: 1; /* Ensure main content is first */
+  }
+}
+
+/* Additional responsive adjustments can be made for even smaller screens */
+@media (max-width: 576px) {
+  .main-content {
+    margin: 0 10px; /* Even smaller margin on extra small screens */
+  }
+}
+
+/* Adjust navbar position for smaller screens */
+nav.navbar {
+  width: 100%; /* Full width */
+  left: 0; /* Align to the left edge */
+}
+
+/* Optional: if you're using Bootstrap, make sure it is imported in your project */
+@media (min-width: 768px) {
+  .navbar-collapse {
+    justify-content: flex-end; /* Aligns nav items to the right */
+  }
+}
